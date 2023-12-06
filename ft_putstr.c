@@ -6,21 +6,38 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:03:46 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/04 21:05:05 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/06 06:01:41 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-char	*ft_putstr(char *s)
+void	ft_putstr(char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		write(1, &s[i], 1);
 		i++;
 	}
-	return (s);
+}
+
+int	ft_printstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (s == NULL)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
+	while (s[i] != '\0')
+	{
+		ft_putchar(1, &s[i], 1);
+		i++;
+	}
+	return (i);
 }

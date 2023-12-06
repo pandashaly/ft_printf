@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:44:39 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/04 22:06:18 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/06 06:08:20 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putnbr(long n)
 	ft_putchar(n % 10 + '0');
 }
 
-void	ft_puthex(unsigned int n, char c)
+/*void	ft_puthex(unsigned int n, char c)
 {
 	char	*base;
 
@@ -31,16 +31,42 @@ void	ft_puthex(unsigned int n, char c)
 	if (n > 15)
 		ft_puthex(n / 16, c);
 	ft_putchar(base[n % 16]);
+}*/
+
+int	ft_putnbrbase(unsigned long n, int base, char *c)
+{
+	int	count;
+
+	//if (n < 0)
+	//{
+	//	ft_putchar('-');
+	//	return (ft_putnbrbase(-n, base, c) + 1);
+	//}
+	else if (n < base)
+		return (ft_putchar(c[n]));
+	else
+	{
+		count = ft_putnbrbase(n / base, base, c);
+		return (ft_putnbrbase(n % base, base, c) + count);
+	}
 }
 
-int	main(void)
+/*int	main(void)
 {
 	unsigned int	n;
-	char	c;
+	char			c;
+	char			*x;
+	char			*X;
 
-	n = 4096;
-	c = 'f';
+	n = 31;
+	c = 'x';
+	x = "0123456789abcdef";
+	X = "0123456789ABCDEF";
+	ft_putnbrbase(n, 16, x);
+	printf("\n");
 	ft_puthex(n, c);
 	printf("\n");
+	printf("realx: %x\n", n);
+	printf("realX: %X\n", n);
 	return (0);
-}
+}*/
