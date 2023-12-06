@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:44:39 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/06 06:08:20 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/06 06:31:46 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void	ft_putnbr(long n)
+int	ft_putnbr(long n)
 {
 	if (n >= 10)
 		ft_putnbr(n / 10);
@@ -42,7 +42,7 @@ int	ft_putnbrbase(unsigned long n, int base, char *c)
 	//	ft_putchar('-');
 	//	return (ft_putnbrbase(-n, base, c) + 1);
 	//}
-	else if (n < base)
+	if (n < base)
 		return (ft_putchar(c[n]));
 	else
 	{
@@ -57,14 +57,17 @@ int	ft_putnbrbase(unsigned long n, int base, char *c)
 	char			c;
 	char			*x;
 	char			*X;
+	int				i;
 
-	n = 31;
+	n = 17729936;
 	c = 'x';
 	x = "0123456789abcdef";
 	X = "0123456789ABCDEF";
-	ft_putnbrbase(n, 16, x);
+	i = ft_putnbrbase(n, 16, x);
+
+	printf(" nbrbse %d\n", i);
 	printf("\n");
-	ft_puthex(n, c);
+	//ft_puthex(n, c);
 	printf("\n");
 	printf("realx: %x\n", n);
 	printf("realX: %X\n", n);
