@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:08:02 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/06 05:50:04 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:22:23 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_format(const char *str, va_list args)
 		return (ft_putchar(va_arg(args, int)));
 	else if (*str == 's')
 		return (ft_printstr(va_arg(args, char *)));
-	else if (*str == 'p')
-		return (ft_putptr(va_arg(args, uintptr_t)));
+	//else if (*str == 'p')
+	//	return (ft_putptr(va_arg(args, uintptr_t)));
 	else if (*str == 'd' || *str == 'i')
 		return (ft_putnbr(va_arg(args, long)));
 	else if (*str == 'u')
@@ -57,12 +57,12 @@ int	ft_printf(const char *arg, ...)
 
 int	main(void)
 {
-	ft_printf("hello i am %s !\n", "Shaly");
-//	ft_printf();
-//	ft_printf();
-//	ft_printf();
-//	ft_printf();
-//	ft_printf();
+	ft_printf("hello i am %s!!\n", "Shaly");
+	ft_printf("%s %s\n", "Today is", __DATE__);
+	ft_printf("%s \n", "abc");
+	ft_printf("%s %s\n", "The time is", __TIME__);
+	ft_printf("%c is for %s!\n", 'c', "Choombas");
+	ft_printf("%c%c is for %d!\n", 'f', 't', 42);
 //	ft_printf();
 //	ft_printf();
 //	ft_printf();

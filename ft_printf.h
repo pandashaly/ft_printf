@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:00:08 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/06 05:46:43 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:08:20 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int		ft_printf(const char *arg, ...);
 int		ft_format(const char *str, va_list args);
 int		ft_putchar(char c);
-int		ft_putstr(char *s);
+void	ft_putstr(char *s);
 int		ft_printstr(char *s);
 int		ft_putptr(uintptr_t n);
 int		ft_putnbrbase(unsigned long n, int base, char *c);

@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:03:46 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/06 06:01:41 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:12:22 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_printstr(char *s)
 	}
 	while (s[i] != '\0')
 	{
-		ft_putchar(1, &s[i], 1);
+		ft_putchar(s[i]);
 		i++;
 	}
 	return (i);
