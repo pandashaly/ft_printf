@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:08:02 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/07 13:22:23 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:53:26 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ int	main(void)
 	ft_printf("%s %s\n", "The time is", __TIME__);
 	ft_printf("%c is for %s!\n", 'c', "Choombas");
 	ft_printf("%c%c is for %d!\n", 'f', 't', 42);
-//	ft_printf();
-//	ft_printf();
-//	ft_printf();
-//	ft_printf();
-//	ft_printf();
+	ft_printf("%d %i \n", 42, 42);
+	ft_printf("%x %X \n", 42, 42);
+	ft_printf("%% \n");
+	ft_printf("%x \n", 31);
+	ft_printf("%u \n", 42);
+	//ft_printf(");
 	return (0);
 }

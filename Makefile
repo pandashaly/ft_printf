@@ -6,15 +6,21 @@
 #    By: ssottori <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/05 21:19:06 by ssottori          #+#    #+#              #
-#    Updated: 2023/12/06 06:10:43 by ssottori         ###   ########.fr        #
+#    Updated: 2023/12/07 14:04:23 by ssottori         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 CCF = cc -Wall -Wextra -Werror
 AR = ar -rcs
 RM = rm -f
-SRC =
+SRC = ft_printf.c \
+	  ft_putchar.c \
+	  ft_putptr.c \
+	  ft_puthex.c \
+	  ft_putstr.c \
+	  main.c \
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
