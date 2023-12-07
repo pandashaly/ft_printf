@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_putbase.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 16:06:02 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/07 21:58:41 by ssottori         ###   ########.fr       */
+/*   Created: 2023/12/07 17:29:14 by ssottori          #+#    #+#             */
+/*   Updated: 2023/12/07 21:55:42 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putptr(void	*ptr)
+int	ft_unbase(unsigned long n, unsigned int base, char *c)
 {
-	uintptr_t	cast;
-	char		*base;
+	int	count;
 
-	cast = (uintptr_t)ptr;
-	base = "0123456789abcdef";
-	if (ptr == NULL)
+	if (n < base)
+		return (ft_putchar(c[n]));
+	else
 	{
-		write(1, "(nil)", 5);
-		return (5);
+		count = ft_putnbrbase(n / base, base, c);
+		return (ft_putnbrbase(n % base, base, c) + count);
 	}
-	write(1, "0x", 2);
-	return (ft_unbase(cast, 16, base) + 2);
 }

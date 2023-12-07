@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:44:39 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/06 06:31:46 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/07 21:42:40 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int	ft_putnbr(long n)
+/*int	ft_putnbr(long n)
 {
 	if (n >= 10)
 		ft_putnbr(n / 10);
 	ft_putchar(n % 10 + '0');
-}
+}*/
 
 /*void	ft_puthex(unsigned int n, char c)
 {
@@ -33,15 +33,16 @@ int	ft_putnbr(long n)
 	ft_putchar(base[n % 16]);
 }*/
 
-int	ft_putnbrbase(unsigned long n, int base, char *c)
+int	ft_putnbrbase(long n, int base, char *c)
 {
 	int	count;
 
-	//if (n < 0)
-	//{
-	//	ft_putchar('-');
-	//	return (ft_putnbrbase(-n, base, c) + 1);
-	//}
+	count = 0;
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		return (ft_putnbrbase(-n, base, c) + 1);
+	}
 	if (n < base)
 		return (ft_putchar(c[n]));
 	else

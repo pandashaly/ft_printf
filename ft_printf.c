@@ -6,7 +6,7 @@
 /*   By: ssottori <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 19:08:02 by ssottori          #+#    #+#             */
-/*   Updated: 2023/12/07 13:53:26 by ssottori         ###   ########.fr       */
+/*   Updated: 2023/12/07 21:57:20 by ssottori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ int	ft_format(const char *str, va_list args)
 		return (ft_putchar(va_arg(args, int)));
 	else if (*str == 's')
 		return (ft_printstr(va_arg(args, char *)));
-	//else if (*str == 'p')
-	//	return (ft_putptr(va_arg(args, uintptr_t)));
+	else if (*str == 'p')
+		return (ft_putptr(va_arg(args, void *)));
 	else if (*str == 'd' || *str == 'i')
-		return (ft_putnbr(va_arg(args, long)));
+		return (ft_putnbrbase(va_arg(args, int), 10, "0123456789"));
 	else if (*str == 'u')
-		return (ft_putnbr(va_arg(args, long)));
+		return (ft_unbase(va_arg(args, unsigned int), 10, "0123456789"));
 	else if (*str == 'x')
-		return (ft_putnbrbase(va_arg(args, unsigned int), 16, "0123456789abcdef"));
+		return (ft_unbase(va_arg(args, unsigned int), 16, "0123456789abcdef"));
 	else if (*str == 'X')
-		return (ft_putnbrbase(va_arg(args, unsigned int), 16, "0123456789ABCDEF"));
+		return (ft_unbase(va_arg(args, unsigned int), 16, "0123456789ABCDEF"));
 	else if (*str == '%')
 		return (ft_putchar('%'));
 	else
@@ -55,7 +55,7 @@ int	ft_printf(const char *arg, ...)
 	return (count);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	ft_printf("hello i am %s!!\n", "Shaly");
 	ft_printf("%s %s\n", "Today is", __DATE__);
@@ -70,4 +70,4 @@ int	main(void)
 	ft_printf("%u \n", 42);
 	//ft_printf(");
 	return (0);
-}
+}*/
